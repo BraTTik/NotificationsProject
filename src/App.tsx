@@ -1,11 +1,12 @@
 import React, { FC } from 'react'
-import { Icon, IconTypes } from './components'
+import { Header } from './containers'
+import './index.scss'
 
 const App: FC = () => {
   return (
-    <div>
-      <Icon type={IconTypes.bell} />
-    </div>
+    <>
+      <Header />
+    </>
   )
 }
 

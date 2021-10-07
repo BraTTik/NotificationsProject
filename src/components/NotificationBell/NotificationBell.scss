@@ -1,0 +1,8 @@
+.notification-bell {
+  position: relative;
+
+  &__event-list {
+    width: content-box;
+    position: absolute;
+  }
+}

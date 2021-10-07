@@ -1,0 +1,18 @@
+import React from 'react'
+import { MainContainer, Row } from 'containers'
+import { NotificationBell } from 'components'
+import './Header.scss'
+
+export const Header = () => {
+  return (
+    <header>
+      <MainContainer className='header'>
+        <Row between middle>
+          <h1>Notifications</h1>
+          <NotificationBell />
+        </Row>
+      </MainContainer>
+    </header>
+  )
+}
+

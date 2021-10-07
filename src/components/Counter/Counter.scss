@@ -1,0 +1,32 @@
+@import 'src/assets/css/mixins';
+@import 'src/assets/css/colors';
+
+.counter {
+  @include flexCenter;
+  @include circle(25px);
+  display: none;
+  position: absolute;
+  background-color: darkred;
+  color: $grey-0;
+  font-size: 0.875rem;
+
+  &.top {
+    top: 0;
+  }
+
+  &.left {
+    left: 0;
+  }
+
+  &.bottom {
+    bottom: 0;
+  }
+
+  &.right {
+    right: 0;
+  }
+
+  &.show {
+    display: flex;
+  }
+}

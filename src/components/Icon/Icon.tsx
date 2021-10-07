@@ -9,7 +9,7 @@ type IconProps = {
 
 export const Icon: FC<IconProps> = (props) => {
   const { type } = props
-  console.log(type)
+
   if (!nodes[type]) return null
 
   return (
