@@ -1,4 +1,4 @@
-import { NotificationType } from '../../../models/notificationType'
+import { NotificationType } from '../../../models/NotificationType'
 
 
 export type NotificationReducer = {

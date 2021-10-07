@@ -1,10 +1,10 @@
 import React, { FC } from 'react'
-import './App.css'
+import { Icon, IconTypes } from './components'
 
 const App: FC = () => {
   return (
-    <div className='App'>
-      Works
+    <div>
+      <Icon type={IconTypes.bell} />
     </div>
   )
 }
