@@ -13,3 +13,30 @@
   align-items: center;
   justify-content: center;
 }
+
+@mixin animation($animation) {
+  animation: $animation .3s ease-in forwards;
+}
+
+@keyframes fade-in {
+  from {
+    transform: translateY(-10%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-10%);
+    opacity: 0;
+    visibility: visible;
+  }
+}

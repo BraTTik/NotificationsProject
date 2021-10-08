@@ -1,8 +1,21 @@
+@import 'assets/css/mixins';
+
 .notification-bell {
   position: relative;
+  cursor: pointer;
 
   &__event-list {
-    width: content-box;
     position: absolute;
+    display: none;
+
+    &.shown {
+      display: block;
+      @include animation(fade-in);
+    }
+
+    &.closing {
+      @include animation(fade-out);
+    }
   }
+
 }
