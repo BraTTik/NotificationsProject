@@ -1,8 +1,5 @@
 import React from 'react';
-import { render } from '@testing-library/react';
 import App from './App';
-import { Provider } from 'react-redux'
-import { store } from './store'
 
 jest.mock('./containers', () => ({
   Header: () => <div>Header</div>,
@@ -10,10 +7,7 @@ jest.mock('./containers', () => ({
 }))
 
 test('App renders', () => {
-  const { container } = render(
-      <Provider store={store}>
-          <App />
-      </Provider>
-  );
+  const { container } = renderWithProvider(() => <App />)
   expect(container.innerHTML).toMatch('Header')
+  expect(container.innerHTML).toMatch('Main Container')
 });
