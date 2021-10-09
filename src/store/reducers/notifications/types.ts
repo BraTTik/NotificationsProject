@@ -7,7 +7,9 @@ export type NotificationReducer = {
 
 export enum NotificationActionEnum {
   SET_NOTIFICATIONS = 'SET_NOTIFICATIONS',
-  READ_NOTIFICATION = 'READ_NOTIFICATION'
+  READ_NOTIFICATION = 'READ_NOTIFICATION',
+  CLEAR_NOTIFICATIONS = 'CLEAR_NOTIFICATIONS',
+  ADD_EVENT = 'ADD_EVENT'
 }
 
 export interface SetNotifications {
@@ -20,4 +22,14 @@ export interface ReadNotification {
   payload: string
 }
 
-export type NotificationAction = SetNotifications | ReadNotification
+export interface ClearNotifications {
+  type: NotificationActionEnum.CLEAR_NOTIFICATIONS
+  payload?: boolean
+}
+
+export interface AddEvent {
+  type: NotificationActionEnum.ADD_EVENT
+  payload: NotificationType
+}
+
+export type NotificationAction = SetNotifications | ReadNotification | ClearNotifications | AddEvent

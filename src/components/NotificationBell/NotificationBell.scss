@@ -1,4 +1,5 @@
 @import 'assets/css/mixins';
+@import 'assets/css/colors';
 
 .notification-bell {
   position: relative;
@@ -7,6 +8,10 @@
   &__event-list {
     position: absolute;
     display: none;
+    background-color: $grey-3;
+    padding: 1rem;
+    right: -16px;
+    font-size: 1.5rem;
 
     &.shown {
       display: block;
@@ -16,6 +21,28 @@
     &.closing {
       @include animation(fade-out);
     }
-  }
 
+    &__item {
+      white-space: nowrap;
+      max-width: 20ch;
+      margin-bottom: 10px;
+
+      div {
+        width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      time {
+        margin-top: -10px;
+        font-size: 1rem;
+      }
+    }
+
+    &__button {
+      font-size: 1rem;
+      text-decoration: underline;
+      font-weight: 700;
+    }
+  }
 }
