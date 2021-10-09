@@ -3,6 +3,10 @@
   height: $width;
 }
 
+@mixin transition($time: .3s) {
+  transition: all $time ease;
+}
+
 @mixin circle($radius) {
   @include square($radius);
   border-radius: 50%;

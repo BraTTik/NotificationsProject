@@ -10,9 +10,10 @@ const INITIAL_AMOUNT_TO_SHOW = 5
 type EventListProps = {
   events: NotificationType[]
   show: boolean
+  handleClose: () => void
 }
 
-export const EventList: FC<EventListProps> = ({ events, show}) => {
+export const EventList: FC<EventListProps> = ({ events, show, handleClose }) => {
 
   const { readNotification } = useActions()
 
@@ -44,10 +45,10 @@ export const EventList: FC<EventListProps> = ({ events, show}) => {
   }, [show, shown])
 
   useEffect(() => {
-    if (eventsAmount > previousAmount) {
+    if (eventsAmount > previousAmount && shown) {
       updateAmountToShow()
     }
-  }, [eventsAmount, previousAmount])
+  }, [eventsAmount, previousAmount, shown])
 
   const handleOnClose = () => {
     if (!show) {
@@ -67,13 +68,13 @@ export const EventList: FC<EventListProps> = ({ events, show}) => {
   )
 
   return (
-    <div className={classes} onAnimationEnd={handleOnClose}>
+    <div className={classes} onAnimationEnd={handleOnClose} onClick={event => event.stopPropagation()}>
       {
         events.length
           ? shownEvents.map(event => <EventItem event={event} />)
           : emptyList
       }
-      <div className='notification-bell__event-list__button'>show all...</div>
+      <div className='notification-bell__event-list__button' onClick={handleClose}>show all...</div>
     </div>
   )
 }

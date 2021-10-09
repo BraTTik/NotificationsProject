@@ -1,0 +1,18 @@
+@import "src/assets/css/colors";
+@import "src/assets/css/mixins";
+
+.button {
+  background-color: $grey-3;
+  border: 1px solid $grey-6;
+  border-radius: 4px;
+  padding: .3em .5em;
+  color: $grey-0;
+  font-size: 1rem;
+  @include transition();
+
+  &:hover {
+    outline: none;
+    background-color: $grey-2;
+    color: $grey-6;
+  }
+}

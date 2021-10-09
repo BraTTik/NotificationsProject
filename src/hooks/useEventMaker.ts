@@ -3,7 +3,7 @@ import { useCallback, useEffect } from 'react'
 import { makeEvent, makeSetOfNewEvents } from '../utils/mockUtils'
 import { useTypedSelector } from './useTypedSelector'
 
-const DEFAULT_TIME = 20000 // 20 secs
+const DEFAULT_TIME = 10000// 10 secs
 let timer: NodeJS.Timeout
 
 export const useEventMaker = (ms: number = DEFAULT_TIME) => {

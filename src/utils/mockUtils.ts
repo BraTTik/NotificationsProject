@@ -7,11 +7,11 @@ const makeTitle = (): string => `${hacker.adjective()} ${hacker.noun()} ${hacker
 const makeDate = (relativeDate?: Date): Date =>
   relativeDate ? date.between(new Date(), relativeDate) : date.past(1)
 
-export const makeEvent = (date?: Date): NotificationType => {
+export const makeEvent = (date?: Date, title?: string): NotificationType => {
   return {
     id: datatype.uuid(),
     isNew: true,
-    title: makeTitle(),
+    title: title || makeTitle(),
     date: makeDate(date)
   }
 }

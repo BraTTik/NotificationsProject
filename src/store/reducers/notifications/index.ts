@@ -3,7 +3,8 @@ import { updateState } from '../helpers'
 import { updateItemInArrayByIndex } from '../../../utils/arrayUtils'
 
 const initialState: NotificationReducer = {
-  notifications: []
+  notifications: [],
+  showNotifications: false
 }
 
 export function notifications (state = initialState, action: NotificationAction): NotificationReducer {
@@ -23,6 +24,19 @@ export function notifications (state = initialState, action: NotificationAction)
     case NotificationActionEnum.ADD_EVENT: {
       const list = state.notifications
       return updateState(state, { notifications: [payload, ...list] })
+    }
+
+    case NotificationActionEnum.TOGGLE_NOTIFICATION_WINDOW: {
+      return updateState(state, { showNotifications: payload })
+    }
+
+    case NotificationActionEnum.CLEAR_NOTIFICATIONS: {
+      const notifications = state.notifications.map(item => ({ ...item, isNew: false }))
+      return updateState(state, { notifications })
+    }
+
+    case NotificationActionEnum.REMOVE_ALL_EVENTS: {
+      return updateState(state, { notifications: [] })
     }
 
     default:

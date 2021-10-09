@@ -5,14 +5,13 @@ import './Header.scss'
 
 export const Header = () => {
   return (
-    <header>
-      <MainContainer className='header'>
+    <MainContainer>
+      <header className='header'>
         <Row between middle>
           <h1>Notifications</h1>
           <NotificationBell />
         </Row>
-      </MainContainer>
-    </header>
+      </header>
+    </MainContainer>
   )
 }
-

@@ -1,0 +1,16 @@
+@import 'src/assets/css/colors';
+
+.new-event-form {
+
+  .text-input {
+    width: 200px;
+
+    & input::placeholder {
+      color: $grey-6;
+    }
+  }
+
+  .button {
+    margin-left: 10px;
+  }
+}
