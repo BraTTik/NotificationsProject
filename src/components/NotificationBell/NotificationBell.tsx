@@ -2,7 +2,6 @@ import React from 'react'
 import { Counter, Icon, IconTypes } from 'components'
 import { EventList } from './EventList'
 import './NotificationBell.scss'
-import { useOnClickOutside } from '../../hooks/useOnClickOutside'
 import { useTypedSelector } from '../../hooks/useTypedSelector'
 import { useActions } from '../../hooks/useActions'
 
